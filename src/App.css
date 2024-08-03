@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,300&display=swap');
+
+/***** PRE-REQUISITE *****/
+
+body {
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+h1,
+h2 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+/* NavBar.css */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  color: white;
+  padding: 1rem;
+  position: relative;
+}
+
+.links {
+  display: none;
+}
+
+.links.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #3F20FF;
+  width: 100%;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.side-link:hover {
+  background: #ccc;
+}
+
+.close-btn {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.triagram {
+  cursor: pointer;
+  color: #3F20FF;
+  font-size: 2em;
+}
+
+/***** LOGIN PAGE *****/
+.desktop-banner-container {
+  display: none;
+}
+
+.form-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/banner1.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  color: #3F20FF;
+  text-align: center;
+}
+
+.login-logo {
+  color: #3F20FF;
+}
+
+.login-form {
+  backdrop-filter: blur(1px);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.89);
+  border-radius: 8px;
+  width: 80%;
+  position: relative;
+  margin: auto;
+  height: 65vh;
+  align-items: center;
+}
+
+.signup-container {
+  display: flex;
+  align-items: center;
+}
+
+.signup-container p {
+  font-size: small;
+  margin-right: 1em;
+}
+
+.signup-btn {
+  border-radius: 999px;
+  padding: 1px 16px;
+  border: 1px solid #A293FF;
+  color: #3F20FF;
+  height: 2em;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.welcome-txt {
+  margin-block-end: 0;
+}
+
+.signin-txt {
+  font-size: small;
+}
+
+.invalid-signup {
+  color: red;
+  font-size: small;
+  margin-block-start: 0;
+}
+
+.input-container {
+  position: relative;
+  width: 80%;
+}
+
+.show-password {
+  position: absolute;
+  left: 90%;
+  top: 20%;
+}
+
+.input-label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 0.8em;
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-field {
+  width: 95%;
+  height: 1.8em;
+  font-size: 0.9em;
+  padding: 0.7em 0.5em 0;
+  margin-bottom: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:focus):not(:placeholder-shown) + .input-label {
+  top: -0.1em;
+  left: 0.5em;
+  font-size: 0.7em;
+  color: blue;
+}
+
+.input-field:focus:not(:placeholder-shown) {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.input-field:not(:focus)::placeholder,
+.input-field:focus::placeholder {
+  color: transparent;
+}
+
+.input-field:focus {
+  border: 2px solid #3F20FF;
+  outline: none;
+}
+
+.submit {
+  width: 82%;
+  padding: 0.5em;
+  margin-top: 2em;
+  border-radius: 5em;
+  border: none;
+  background-color: #3F20FF;
+  color: white;
+}
+
+.submit:disabled {
+  background-color: #3e20ff2d;
+}
+
+.forgot-password {
+  color:#3F20FF;
+  font-size: small;
+}
+
+/*** LOADING BAR ***/
+.loadingbar-container {
+  display: flex;
+  gap: 0.7em;
+}
+
+.loadingbar-container div {
+  height: 3.5em;
+  border-radius: 5px;
+  width: 0.3em;
+  background-color: #3F20FF;
+}
+
+.loading {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background-color: #f0efefa8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.no-loading {
+  display: none;
+}
+
+/***** SIDEBAR *****/
+.side-links {
+  padding-inline-start: 0%;
+  margin-left: 1em;
+}
+
+.side-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.side-link img {
+  width: 1.5em;
+}
+
+.link {
+  width: 100%;
+  font-size: 0.9em;
+}
+
+@keyframes loadingAnim {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0.2);
+    border-radius: 50%;
+  }
+}
+
+.b3 {
+  animation: loadingAnim 1s linear infinite;
+}
+
+.b2,
+.b4 {
+  animation: loadingAnim 1s linear 0.25s infinite;
+}
+
+.b1,
+.b5 {
+  animation: loadingAnim 1s linear 0.5s infinite;
+}
+
+
+@media (min-width: 768px) {
+  /***** LOGIN *****/
+  .main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    display: flex;
+  }
+  .desktop-banner-container {
+    display: block;
+    width: 45%;
+    height: 90vh;
+    margin: auto;
+  }
+
+  .banner {
+    width: 100%;
+    height: 90vh;
+    border-radius: 1em;
+  }
+
+  .form-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    width: 50%;
+    height: 90vh;
+    margin: auto;
+  }
+
+  .login-form {
+    width: 100%;
+    height: 90vh;
+  }
+
+  .header {
+    width: 95%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.6em;
+  }
+
+  .welcome-txt {
+    margin-top: 5em;
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .input-container {
+    width: 60%;
+    align-self: center;
+  }
+
+  .submit {
+    width: 60%;
+  }
+
+
+
+  .links {
+    display: block;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: white;
+    padding: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.192);
+  }
+
+  .side-links {
+    margin-top: 5em;
+  }
+
+  .side-link {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .side-link.active {
+    background-color: #999;
+  }
+
+  .side-link:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+    margin-top: 2em;
+  }
+
+  .links a {
+    color: black;
+  }
+
+  .triagram {
+    display: none;
+  }
+
+  .close-btn {
+    display: none;
+  }
+
+  /*****CAMPAIGN*****/
+  .campaign-body-container {
+    width: 100%;
+  }
+
+  .campaign-body {
+    margin: auto 0 auto 240px;
+  }
+
+  .campaign-txt {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+  .notification-container {
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 0.1em;
+  }
+
+  .notification-icon {
+    width: 1.5em;
+  }
+
+  .user-pic {
+    width: 2.2em;
+  }
+
+  .right-row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em 0 0;
+  }
+
+  .total-revenue {
+    line-height: 60px;
+    margin-top: 1em;
+    size: 40px;
+    font-weight: 600;
+  }
+
+  .amount {
+    font-weight: 600;
+    size: 40px;
+    line-height: 60px;
+    background: linear-gradient(90deg, #DF1EFF -28.65%, #FFC93E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -0.5em;
+  }
+
+  .right-row1-col2 {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .right-row1-2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .right-row1-2-col2 {
+    display: flex;
+    gap: 1em;
+    padding: 0 2em;
+
+  }
+
+  .filter {
+    width: 1.5em;
+  }
+  
+  .sort-1,
+  .sort-2 {
+    display: flex;
+    align-items: center;
+    padding: 0em 0.4em;
+    height: 2em;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.308);
+    border-radius: 5px;
+  }
+
+  .sort-1 p,
+  .sort-2 p {
+    font-size: small;
+  }
+
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em 0 0;
+  }
+
+  .metrics-col {
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    padding: 1em;
+    border-radius: 10px;
+    width: 25%;
+  }
+
+  .metrics-col div {
+    display: flex;
+  }
+
+  .metric-titles {
+    margin-bottom: 4em;
+  }
+
+  .metric-value {
+    font-weight: 600;
+  }
+
+  .metric-analysis {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5em;
+    gap: 0.2em;
+    padding: 0em,1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #82ff8027;
+  }
+
+  .percent-increase {
+    color: #04B200;
+    ;
+  }
+
+  .percent-decrease {
+    color: #FF8080;
+  }
+
+  .increase,
+  .decrease {
+    width: 1em;
+  }
+
+  .compare {
+    font-size: small;
+  }
+
+  .recents {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em 0 0;
+    margin-top: 3em;
+    align-items: center;
+  }
+
+  .campaigns-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em 0 0;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 1em 2em 1em 0;
+  }
+
+  .col div {
+    display: flex;
+  }
+
+  .recent-count {
+    background-color: #ccc;
+    padding: 0 0.3em;
+    border-radius: 5px;
+  }
+
+  .new-campaign {
+    display: flex;
+    padding: 0.5em 2em;
+    border: 1px dashed rgba(0, 0, 0, 0.356);
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+  }
+
+  .add {
+    width: 1.5em;
+  }
+
+  /***** RECENT CAMPAIGNS *****/
+  .campaign-box {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+
+  .reactors {
+    display: flex;
+    gap: 0;
+  }
+
+  .reactor {
+    width: 1.5em;
+    height: 1.5em;
+    margin: -6px;
+  }
+
+  .campaign-box-row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+
+  .status {
+    font-size: small;
+    color: #999;
+  }
+
+  /***** NEW CAMPAIGN *****/
+  .form-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.699);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .campaign-form {
+    background-color: white;
+    width: 350px;
+    height: 60vh;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .create-campaign-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .create-campaign-header p {
+    font-weight: 500;
+  }
+
+  .new-cpn-instruction {
+    font-size: small;
+    margin-top: 1em;
+  }
+
+  .close-button {
+    width: 1.5em;
+    cursor: pointer;
+  }
+
+  .campaign-input,
+  .select {
+    width: 80%;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    margin-bottom: 1em;
+  }
+
+  .description-input {
+    width: 80%;
+    font-size: 1em;
+    padding: 0.5em;
+    height: 4em;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+  }
+
+  .dates {
+    display: flex;
+    position: relative;
+    gap: 0.5em;
+  }
+
+  .date-input {
+    width: 37%;
+    margin-bottom: 1em;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+  }
+
+  .date-input.empty::-webkit-datetime-edit-text,
+  .date-input.empty::-webkit-datetime-edit-month-field,
+  .date-input.empty::-webkit-datetime-edit-day-field,
+  .date-input.empty::-webkit-datetime-edit-year-field {
+    color: transparent;
+  }
+
+  .date-placeholder {
+    position: absolute;
+    top: 35%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  .date-placeholder2 {
+    position: absolute;
+    top: 35%;
+    left: 159px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  
+  .date-input:not(.empty) + .date-placeholder,
+  .date-input:not(.empty) + .date-placeholder2 {
+    display: none;
+  }
+
+  .select {
+    width: 85%;
+  }
+
+  .submit-campaign-btn {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3F20FF;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .cancel-btn {
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    margin-right: 5px;
+  }
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
